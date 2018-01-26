@@ -1,0 +1,40 @@
+<div class="container main" *ngIf="listData && listData.length">
+  <h3>List Demo: </h3>
+  <div class="row tableRow">
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <button type="button" (click)="sortByDate()" class="btn btn-primary mainBtn">Click to Sort By Joining Date</button>
+
+      </div>
+      <div class="col-md-4">
+        <div class="input-group">
+          <span class="input-group-addon">Filter</span>
+          <input id="msg" type="text" class="form-control" [(ngModel)]="searchQuery" nam e="msg"
+                 placeholder="Search by name here ...">
+        </div>
+      </div>
+    </div>
+
+    <div class="row tableContent">
+      <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Joining Date</th>
+          <th>Age</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let list of listData | search: ['name'] : searchQuery;trackBy: trackByFn">
+          <td>{{list.name}}</td>
+          <td>{{list.joining_date}}</td>
+          <td>{{list.age}}</td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

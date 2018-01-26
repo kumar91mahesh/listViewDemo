@@ -1,0 +1,13 @@
+.container.main{
+  padding: 30px;
+}
+.tableRow{
+  border:1px solid grey;
+  padding: 20px;
+}
+.tableContent{
+  margin-top:10px;
+}
+.mainBtn{
+  float: right;
+}
